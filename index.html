@@ -8,32 +8,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/80f12c4255.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Questrial&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <title>Momentum App</title>
 </head>
 <body>
     <!--input의 유효성 검사하려면 input has to be inside of the <form>-->
-        <form id="login-form" class="hidden">
-            <input 
-                required maxLength= "15"
-                type="text" 
-                placeholder="What is your name?" 
-             />
+
             <!--inside of form tag click the btn or press the enter 자동으로 input submit됨.-->
             <!--JS에서 eventlistener의 click 신경 안써도 됨. matter is SUBMIT event!-->
             <!--submit 하면서 브라우저 refresh가 디폴트. 새로고침하지 않고 유저정보를 저장해야함 -->
             <!--<button>Log In</button>-->
-            <input type="submit" value="Log in"/> 
         </form>
         <div class="main__container">
             <h2 id="clock">00:00:00</h2>
+            <form id="login-form" class="hidden">
+                <input 
+                    required maxLength= "30"
+                    type="text" 
+                    placeholder="What is your name?" 
+                    required
+                 />
+                <!-- <input type="submit" value="Log in"/>  -->
+            </form>
             <h1 id = greeting  class = hidden></h1>
             <form id="todo-form">
                 <input type="text" placeholder="Write a To Do and Press Enter" required/ >
             </form>
+            <ul id="todo-list"></ul>
         </div>
 
-        <ul id="todo-list"></ul>
+        
         <div id ="quote">
             <span class="quote__text"></span>
             <span class="quote__author"></span>
