@@ -10,6 +10,7 @@ function saveToDos() {
   //local Storage에 array로 저장이 안되기 때문에 JASON.stringify로 array처럼 생긴
   //string으로 저장한 후 다시 JASON.parse이용해서 object array로 꺼내는 방식
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+  toDoInput.focus();
 }
 
 function deleteToDo(event) {
@@ -48,6 +49,7 @@ function paintToDo(newTodo) {
   liItemContainer.appendChild(deleteButton);
   li.appendChild(liItemContainer);
   toDoList.appendChild(li);
+  li.scrollIntoView();
 }
 
 function handleToDoSubmit(event) {
@@ -66,7 +68,6 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 // button.addEventListener("click", deleteToDo);
-function sayHello() {}
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 

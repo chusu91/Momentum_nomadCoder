@@ -49,7 +49,7 @@ input {
   border-bottom: 1px solid white;
   outline: none;
   color: var(--color-white);
-  width: 40%;
+  width: 30%;
 }
 
 ul {
@@ -109,14 +109,14 @@ input::-webkit-input-placeholder {
 #todo-list {
   margin: 12px 0;
   margin: 0 auto;
-  width: 35%;
+  width: 30%;
   max-height: 300px;
   background-color: var(--color-bg-white);
   overflow-y: auto;
 }
 
 .ToDoListItemContainer {
-  margin-top: 7px;
+  margin: 7px 0;
   font-size: var(--font-regular);
   display: flex;
   justify-content: space-between;
@@ -179,5 +179,18 @@ input::-webkit-input-placeholder {
   z-index: 1;
 }
 
-/* why cant get weather? */
-/* todo list. how to make it nicely */
+#weather {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+}
+
+#weather > span {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-family: var(--font-sans-serif);
+}
+
+#weather > span:last-child {
+  font-size: var(--font-small);
+}

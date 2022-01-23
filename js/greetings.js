@@ -2,6 +2,8 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 const link = document.querySelector("a");
+const todoList = document.querySelector("#todo-form");
+const todoInput = document.querySelector("#todo-form input");
 
 //for variable contains only STRING
 const HIDDEN_CLASSNAME = "hidden";
@@ -17,7 +19,9 @@ function onLoginSubmit(event) {
 
 function paintGreeting(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  todoList.classList.remove(HIDDEN_CLASSNAME);
   greeting.innerText = `Hello ${username}`;
+  todoInput.focus();
 }
 
 const savedUserName = localStorage.getItem("USERNAME_KEY");
