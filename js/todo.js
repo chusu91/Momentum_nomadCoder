@@ -15,6 +15,7 @@ function saveToDos() {
 function deleteToDo(event) {
   const deleteBtn = event.target.parentElement;
   const li = deleteBtn.parentElement;
+  console.log(li);
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); //li.id is String so change to int
   saveToDos(); //beacuse filter function makes NEW array, so have to save the array once again
@@ -23,14 +24,15 @@ function deleteToDo(event) {
 function checkToDo(event) {
   const checkBtn = event.target.parentElement;
   const todo = checkBtn.nextElementSibling;
-  todo.style.textDecoration = "line-through";
+  todo.classList.toggle("line-through");
+  checkBtn.classList.toggle("checkBtn-clicked");
 }
 
 function paintToDo(newTodo) {
   const liItemContainer = document.createElement("div");
   liItemContainer.setAttribute("class", "ToDoListItemContainer");
+  liItemContainer.id = newTodo.id; //id of Dom is always STRING
   const li = document.createElement("li");
-  li.id = newTodo.id; //id of Dom is always STRING
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   const checkButton = document.createElement("button");
